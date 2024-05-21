@@ -1,30 +1,38 @@
-<script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+  <div id="app md:min-h-screen">
+    <Navbar />
+    <HeroSection />
+    <HeroSectionAbout />
+    <HeroSectionSkill />
+    <footer class="bg-gray-800 text-white text-center p-4">
+      © 2024 My Website
+    </footer>
   </div>
-  <HelloWorld msg="Vite + Vue" />
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+<script>
+import Navbar from './components/Navbar.vue';
+import ScrollContainer from './components/ScrollContainer.vue';
+import Section from './components/Section.vue';
+import HeroSection from './components/HeroSection.vue';
+import HeroSectionAbout from './components/HeroSectionAbout.vue';
+import HeroSectionSkill from './components/HeroSectionSkill.vue';
+
+export default {
+  name: 'App',
+  components: {
+    Navbar,
+    ScrollContainer,
+    Section,
+    HeroSection,
+    HeroSectionAbout,
+    HeroSectionSkill,
+  },
+};
+</script>
+
+<style>
+@media (max-width: 768px) {
+  /* ปรับขนาดหรือสไตล์ต่าง ๆ ขององค์ประกอบในหน้าจอขนาดเล็กกว่า md ตามต้องการ */
 }
 </style>
